@@ -15,12 +15,5 @@ class SessionsController < ApplicationController
         head :no_content
     end
 
-    def show
-        user = User.find_by(id: session[:user_id])
-        if(user.nil?)
-            render json: {error: "Not authorized"}, status: 401
-        else
-            render json: user
-        end
-    end
+ 
 end
